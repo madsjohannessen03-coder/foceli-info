@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow">
+<title>Join Quiet Café · Foceli</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#09182c;color:#fff1dd;font:17px/1.6 system-ui,sans-serif;min-height:100svh;display:grid;place-items:center;padding:28px}main{width:100%;max-width:440px;text-align:center}h1{font:42px/1.15 Georgia,serif;margin:12px 0 24px}.brand{letter-spacing:.2em;font-size:13px;color:#c4d4df}p{color:#d9e2ec}.button{display:block;border-radius:28px;padding:15px;background:#bce5f6;color:#112b43;text-decoration:none;font-weight:600;margin:26px 0}.note{font-size:14px;color:#b8cadd}a:focus-visible{outline:3px solid #ebc88c;outline-offset:5px}[hidden]{display:none!important}
+</style>
+</head>
+<body><main><div class="brand">FOCELI</div><h1>Quiet Café</h1>
+<section id="invitation" hidden><p>A place for you.<br>Join your friends before the session starts.</p><a id="open" class="button">Open Foceli</a><p class="note">Install Foceli through your TestFlight invitation first, then return here and tap Open Foceli.</p><p class="note">Your host covers this session. Invitations expire after 30 minutes.</p></section>
+<p id="invalid">Open the invitation shared by your host to join their café.</p>
+<noscript><p>Enable JavaScript to open this invitation.</p></noscript>
+</main><script>
+(function(){
+  // Fragments never reach the web server. No analytics, API calls or clipboard.
+  var codes=new URLSearchParams(location.hash.slice(1)).getAll('code');
+  if(codes.length!==1||!/^[a-f0-9]{32}$/.test(codes[0]))return;
+  document.getElementById('open').href='focusworlds://cafe?invite='+codes[0];
+  document.getElementById('invitation').hidden=false;
+  document.getElementById('invalid').hidden=true;
+})();
+</script></body></html>
